@@ -1,8 +1,12 @@
+import ErrorBoundary from 'components/ErrorBoundary';
+import { RouterProvider } from 'react-router';
+import router from 'routes/router';
+
 function App() {
     return (
-        <>
-            <h1>Hello world!</h1>
-        </>
+        <ErrorBoundary>
+            <RouterProvider router={router} />
+        </ErrorBoundary>
     );
 }
 
