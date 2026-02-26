@@ -1,6 +1,23 @@
-const Spinner = () => {
+export interface SpinnerProps {
+    size?: 'small' | 'large';
+}
+
+const Spinner = ({ size = 'large' }: SpinnerProps) => {
+    let spinnerSize;
+    switch (size) {
+        case 'small':
+            spinnerSize = 'w-8 h-8 border-4';
+            break;
+        case 'large':
+        default:
+            spinnerSize = 'w-16 h-16 border-6';
+            break;
+    }
+
     return (
-        <div className="h-10 w-10 animate-spin rounded-full border-4 border-solid border-blue-500 border-t-transparent"></div>
+        <div
+            className={`border-flame-600 border-t-flame-200 animate-spin rounded-full ${spinnerSize}`}
+        />
     );
 };
 

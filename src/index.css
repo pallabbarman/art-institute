@@ -1,1 +1,39 @@
 @import 'tailwindcss';
+
+@theme {
+    --color-white: #ffffff;
+    --color-black: #050f10;
+
+    --color-grey-800: #707070;
+    --color-grey-600: #999999;
+    --color-grey-400: #c2c2c2;
+    --color-grey-200: #ebebeb;
+    --color-grey-100: #f8f8f8;
+
+    --color-moonstone-900: #22686d;
+    --color-moonstone-600: #48bdca;
+    --color-moonstone-200: #d0eef0;
+    --color-moonstone-100: #eff9fa;
+
+    --color-flame-800: #b83d14;
+    --color-flame-600: #e56138;
+    --color-flame-200: #f9d4c8;
+    --color-flame-100: #fdf1ed;
+}
+
+/* nprogress styles  */
+#nprogress {
+    pointer-events: none;
+}
+
+#nprogress .bar {
+    @apply bg-moonstone-600 fixed top-0 left-0 z-50 h-1;
+}
+
+#nprogress .peg {
+    @apply shadow-moonstone-200/50 shadow-md;
+}
+
+#nprogress .spinner {
+    display: none;
+}

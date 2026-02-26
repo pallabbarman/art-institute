@@ -1,10 +1,13 @@
-import Spinner from 'components/Spinner';
+import useGetArtworks from 'hooks/useGetArtworks';
 
 const Artworks = () => {
+    const { data } = useGetArtworks();
+
     return (
         <div>
-            <h1>Hello world!</h1>
-            <Spinner />
+            {data?.data.map((artwork) => (
+                <h1 key={artwork?.id}>{artwork?.title}</h1>
+            ))}
         </div>
     );
 };
