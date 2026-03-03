@@ -10,7 +10,7 @@ const LinearProgress = () => {
         };
     }, []);
 
-    return <div className="min-h-full"></div>;
+    return <div className="min-h-full" />;
 };
 
 export default LinearProgress;

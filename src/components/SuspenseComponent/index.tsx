@@ -4,7 +4,7 @@ import { Suspense, type ComponentType } from 'react';
 const SuspenseComponent =
     <P extends object>(Component: ComponentType<P>) =>
     (props: P) => (
-        <Suspense fallback={<Spinner />}>
+        <Suspense fallback={<Spinner size="large" color="secondary" />}>
             <Component {...props} />
         </Suspense>
     );
