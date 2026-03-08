@@ -8,6 +8,7 @@ const RootLayout = SuspenseComponent(lazy(() => import('layouts/Root')));
 const MainLayout = SuspenseComponent(lazy(() => import('layouts/Main')));
 
 const Artworks = PageLoader(lazy(() => import('pages/Artworks')));
+const Artwork = PageLoader(lazy(() => import('pages/Artwork')));
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
                     {
                         path: routes.artworks.path,
                         element: <Artworks />,
+                    },
+                    {
+                        path: routes.artwork.path,
+                        element: <Artwork />,
                     },
                 ],
             },

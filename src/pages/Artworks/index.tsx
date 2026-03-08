@@ -1,5 +1,7 @@
 import Spinner from 'components/Spinner';
 import useGetArtworks from 'hooks/useGetArtworks';
+import { Link } from 'react-router';
+import routes from 'routes/index';
 
 const Artworks = () => {
     const { data, isLoading } = useGetArtworks();
@@ -11,7 +13,9 @@ const Artworks = () => {
     return (
         <div>
             {data?.data?.map((artwork) => (
-                <h1 key={artwork?.id}>{artwork?.title}</h1>
+                <Link key={artwork?.id} to={routes.artwork.pathWithId(artwork?.id)}>
+                    <h1>{artwork?.title}</h1>
+                </Link>
             ))}
         </div>
     );

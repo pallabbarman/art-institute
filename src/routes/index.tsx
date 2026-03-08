@@ -36,6 +36,11 @@ const routes = {
         icon: null,
         title: 'Artworks',
     }),
+    artwork: new Route({
+        path: '/artwork/:id',
+        icon: null,
+        title: 'Artwork',
+    }),
 };
 
 export default routes;

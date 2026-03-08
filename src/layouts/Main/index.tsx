@@ -1,13 +1,19 @@
 import ErrorBoundary from 'components/ErrorBoundary';
 import { Outlet } from 'react-router';
+import MainLayoutFooter from './components/MainLayoutFooter';
+import MainLayoutNavbar from './components/MainLayoutNavbar';
 
 const MainLayout = () => {
     return (
-        <div className="container mx-auto px-4">
-            <ErrorBoundary>
-                <Outlet />
-            </ErrorBoundary>
-        </div>
+        <>
+            <MainLayoutNavbar />
+            <div className="container mx-auto my-4 px-4">
+                <ErrorBoundary>
+                    <Outlet />
+                </ErrorBoundary>
+            </div>
+            <MainLayoutFooter />
+        </>
     );
 };
 
