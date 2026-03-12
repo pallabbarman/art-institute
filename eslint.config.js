@@ -1,3 +1,4 @@
+import storybook from 'eslint-plugin-storybook';
 import js from '@eslint/js';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
@@ -24,4 +25,5 @@ export default defineConfig([
             globals: globals.browser,
         },
     },
+    ...storybook.configs['flat/recommended'],
 ]);
