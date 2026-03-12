@@ -1,3 +1,4 @@
+import SearchBar from 'components/SearchBar';
 import Spinner from 'components/Spinner';
 import useGetArtworks from 'hooks/useGetArtworks';
 import { Link } from 'react-router';
@@ -12,6 +13,7 @@ const Artworks = () => {
 
     return (
         <div>
+            <SearchBar name="test" />
             {data?.data?.map((artwork) => (
                 <Link key={artwork?.id} to={routes.artwork.pathWithId(artwork?.id)}>
                     <h1>{artwork?.title}</h1>
