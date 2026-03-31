@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
+    /* colors  */
     --color-white: #ffffff;
     --color-black: #050f10;
 
@@ -19,6 +20,43 @@
     --color-flame-600: #e56138;
     --color-flame-200: #f9d4c8;
     --color-flame-100: #fdf1ed;
+
+    /* fonts  */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+@layer components {
+    h1 {
+        color: var(--color-black);
+        font-size: 32px;
+        font-weight: 700;
+        font-family: var(--font-heading);
+        line-height: calc(40 / 32);
+    }
+
+    h2 {
+        color: var(--color-black);
+        font-size: 24px;
+        font-weight: 700;
+        font-family: var(--font-heading);
+        line-height: calc(32 / 24);
+    }
+
+    h3 {
+        color: var(--color-black);
+        font-size: 18px;
+        font-weight: 700;
+        font-family: var(--font-heading);
+        line-height: calc(24 / 18);
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: var(--font-body);
+        line-height: calc(24 / 14);
+    }
 }
 
 /* nprogress styles  */
