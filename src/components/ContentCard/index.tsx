@@ -1,4 +1,5 @@
 import Chip from 'components/Chip';
+import useFormatDate from 'hooks/useFormatDate';
 import { Link } from 'react-router';
 import routes from 'routes/index';
 import type { ArtworkType } from 'types/artwork';
@@ -8,6 +9,8 @@ export interface ContentCardProps {
 }
 
 const ContentCard = ({ artwork }: ContentCardProps) => {
+    const formatDate = useFormatDate();
+
     return (
         <div className="hover:border-grey-200 flex flex-col gap-4 rounded-md border border-transparent">
             <Link to={routes.artwork.pathWithId(artwork?.id)}>
@@ -21,9 +24,9 @@ const ContentCard = ({ artwork }: ContentCardProps) => {
             </Link>
             <div className="flex flex-col gap-4 px-4 pt-2.5 pb-6">
                 <div className="flex items-center justify-between">
-                    <Chip>{artwork?.category_titles[0]}</Chip>{' '}
+                    <Chip>{artwork?.artwork_type_title}</Chip>{' '}
                     <span className="text-grey-800 text-sm font-semibold">
-                        {artwork?.timestamp}
+                        {formatDate(artwork?.timestamp)}
                     </span>
                 </div>
                 <Link to={routes.artwork.pathWithId(artwork?.id)} className="flex flex-col gap-4">
