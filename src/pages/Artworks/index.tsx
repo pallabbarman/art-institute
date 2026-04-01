@@ -10,9 +10,12 @@ const Artworks = () => {
     }
 
     return (
-        <div className="flex flex-wrap">
+        <div className="grid grid-cols-12 gap-4">
             {data?.data?.map((artwork) => (
-                <div key={artwork?.id} className="w-full sm:w-1/2 lg:w-1/4">
+                <div
+                    key={artwork?.id}
+                    className="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3"
+                >
                     <ContentCard artwork={artwork} />
                 </div>
             ))}
