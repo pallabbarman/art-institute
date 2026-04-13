@@ -22,21 +22,18 @@
         "erasableSyntaxOnly": true,
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
-
-        /* Absolute path */
-        "baseUrl": "./src",
         "paths": {
-            "api/*": ["api/*"],
-            "assets/*": ["assets/*"],
-            "components/*": ["components/*"],
-            "hooks/*": ["hooks/*"],
-            "icons/*": ["icons/*"],
-            "layouts/*": ["layouts/*"],
-            "pages/*": ["pages/*"],
-            "routes/*": ["routes/*"],
-            "test_utils/*": ["test_utils/*"],
-            "types/*": ["types/*"],
-            "utils/*": ["utils/*"]
+            "api/*": ["./src/api/*"],
+            "assets/*": ["./src/assets/*"],
+            "components/*": ["./src/components/*"],
+            "hooks/*": ["./src/hooks/*"],
+            "icons/*": ["./src/icons/*"],
+            "layouts/*": ["./src/layouts/*"],
+            "pages/*": ["./src/pages/*"],
+            "routes/*": ["./src/routes/*"],
+            "test_utils/*": ["./src/test_utils/*"],
+            "types/*": ["./src/types/*"],
+            "utils/*": ["./src/utils/*"]
         }
     },
     "include": ["vite.config.ts"]

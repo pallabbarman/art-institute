@@ -19,6 +19,7 @@ const ContentCard = ({ artwork }: ContentCardProps) => {
                         src={`https://www.artic.edu/iiif/2/${artwork?.image_id}/full/843,/0/default.jpg`}
                         alt={artwork?.thumbnail?.alt_text}
                         className="h-full w-full max-w-full rounded-md object-cover"
+                        loading="lazy"
                     />
                 </div>
             </Link>
@@ -30,7 +31,7 @@ const ContentCard = ({ artwork }: ContentCardProps) => {
                     </span>
                 </div>
                 <Link to={routes.artwork.pathWithId(artwork?.id)} className="flex flex-col gap-4">
-                    <h3>{artwork?.title}</h3>
+                    <h3 className="line-clamp-2 text-ellipsis">{artwork?.title}</h3>
                     {artwork?.short_description && (
                         <p
                             className="line-clamp-3 text-ellipsis text-black/80"
