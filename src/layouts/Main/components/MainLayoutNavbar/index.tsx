@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router';
-import routes from 'routes/index';
 
 const NAV_LINKS = [
     { label: 'Home', href: '/' },
@@ -13,49 +11,53 @@ const MainLayoutNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="relative bg-slate-800 px-6 py-4">
-            <div className="mx-auto flex max-w-7xl items-center justify-between">
-                <Link to={routes.artworks.path} className="text-xl font-semibold text-white">
-                    Art<span className="text-blue-400">Works</span>
-                </Link>
+        <nav className="border-grey-200 relative border-b bg-white px-7">
+            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between">
+                {/* Logo */}
+                <a
+                    href="/"
+                    className="font-heading text-xl font-semibold tracking-tight text-black"
+                >
+                    My<span className="text-moonstone-600">App</span>
+                </a>
 
-                {/* Desktop links  */}
-                <div className="hidden items-center gap-1 md:flex">
+                {/* Desktop nav links */}
+                <div className="hidden items-center gap-0.5 md:flex">
                     {NAV_LINKS.map((link) => (
                         <a
                             key={link.label}
                             href={link.href}
-                            className="rounded-md px-3 py-2 text-sm text-slate-400 transition-colors hover:bg-slate-700 hover:text-slate-100"
+                            className="font-body text-grey-800 hover:bg-moonstone-100 hover:text-moonstone-900 rounded-md px-3.5 py-2 text-sm font-medium transition-colors"
                         >
                             {link.label}
                         </a>
                     ))}
                 </div>
 
-                {/* CTA + Hamburger */}
+                {/* Right side */}
                 <div className="flex items-center gap-3">
                     <a
                         href="/signup"
-                        className="hidden rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600 md:inline-block"
+                        className="font-heading bg-flame-600 hover:bg-flame-800 hidden rounded-md px-5 py-2.5 text-sm font-semibold tracking-wide text-white transition-colors md:inline-block"
                     >
                         Get Started
                     </a>
 
-                    {/* Hamburger button */}
+                    {/* Hamburger */}
                     <button
-                        className="flex flex-col gap-1.5 p-1.5 text-slate-400 hover:text-slate-100 md:hidden"
+                        className="flex flex-col gap-1.5 p-1.5 md:hidden"
                         onClick={() => setIsOpen(!isOpen)}
                         aria-label="Toggle menu"
                         aria-expanded={isOpen}
                     >
                         <span
-                            className={`block h-0.5 w-5 bg-current transition-transform ${isOpen ? 'translate-y-2 rotate-45' : ''}`}
+                            className={`bg-grey-800 block h-0.5 w-5 transition-transform ${isOpen ? 'translate-y-2 rotate-45' : ''}`}
                         />
                         <span
-                            className={`block h-0.5 w-5 bg-current transition-opacity ${isOpen ? 'opacity-0' : ''}`}
+                            className={`bg-grey-800 block h-0.5 w-5 transition-opacity ${isOpen ? 'opacity-0' : ''}`}
                         />
                         <span
-                            className={`block h-0.5 w-5 bg-current transition-transform ${isOpen ? '-translate-y-2 -rotate-45' : ''}`}
+                            className={`bg-grey-800 block h-0.5 w-5 transition-transform ${isOpen ? '-translate-y-2 -rotate-45' : ''}`}
                         />
                     </button>
                 </div>
@@ -63,12 +65,12 @@ const MainLayoutNavbar = () => {
 
             {/* Mobile menu */}
             {isOpen && (
-                <div className="mt-2 space-y-1 border-t border-slate-700 px-2 pt-3 pb-3 md:hidden">
+                <div className="border-grey-200 space-y-0.5 border-t px-3 pt-2 pb-4 shadow-[0_8px_20px_rgba(5,15,16,0.07)] md:hidden">
                     {NAV_LINKS.map((link) => (
                         <a
                             key={link.label}
                             href={link.href}
-                            className="block rounded-md px-3 py-2.5 text-sm text-slate-400 transition-colors hover:bg-slate-700 hover:text-slate-100"
+                            className="font-body text-grey-800 hover:bg-moonstone-100 hover:text-moonstone-900 block rounded-md px-3 py-2.5 text-sm font-medium transition-colors"
                             onClick={() => setIsOpen(false)}
                         >
                             {link.label}
@@ -76,7 +78,7 @@ const MainLayoutNavbar = () => {
                     ))}
                     <a
                         href="/signup"
-                        className="mt-2 block rounded-md bg-blue-500 px-4 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-blue-600"
+                        className="font-heading bg-flame-600 hover:bg-flame-800 mt-2 block rounded-md px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors"
                     >
                         Get Started
                     </a>
