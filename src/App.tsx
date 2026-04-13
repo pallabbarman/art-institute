@@ -1,9 +1,9 @@
-import ErrorBoundary from 'components/ErrorBoundary';
-import { RouterProvider } from 'react-router';
-import router from 'routes/router';
-import 'nprogress/nprogress.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import ErrorBoundary from 'components/ErrorBoundary';
+import 'nprogress/nprogress.css';
+import { RouterProvider } from 'react-router';
+import router from 'routes/router';
 
 const queryClient = new QueryClient();
 
