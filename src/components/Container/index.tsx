@@ -5,7 +5,7 @@ export interface ContainerProps {
     className?: string;
 }
 
-const Container = ({ children, className }: ContainerProps) => {
+const Container = ({ children, className = '' }: ContainerProps) => {
     return <div className={`container mx-auto my-4 px-4 lg:my-8 ${className}`}>{children}</div>;
 };
 
