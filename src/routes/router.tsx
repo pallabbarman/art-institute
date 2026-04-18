@@ -7,6 +7,7 @@ import routes from '.';
 const RootLayout = SuspenseComponent(lazy(() => import('layouts/Root')));
 const MainLayout = SuspenseComponent(lazy(() => import('layouts/Main')));
 
+const NotFound = PageLoader(lazy(() => import('pages/NotFound')));
 const Artworks = PageLoader(lazy(() => import('pages/Artworks')));
 const Artwork = PageLoader(lazy(() => import('pages/Artwork')));
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
                         element: <Artwork />,
                     },
                 ],
+            },
+            {
+                path: '*',
+                element: <NotFound />,
             },
         ],
     },

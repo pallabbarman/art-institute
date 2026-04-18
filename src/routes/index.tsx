@@ -31,6 +31,11 @@ const routes = {
         icon: null,
         title: 'Not found',
     }),
+    home: new Route({
+        path: '/',
+        icon: null,
+        title: 'Artworks',
+    }),
     artworks: new Route({
         path: '/',
         icon: null,

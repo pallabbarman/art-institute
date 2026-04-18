@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { type ReactNode } from 'react';
 
 export interface ContainerProps {
@@ -5,8 +6,8 @@ export interface ContainerProps {
     className?: string;
 }
 
-const Container = ({ children, className = '' }: ContainerProps) => {
-    return <div className={`container mx-auto my-4 px-4 lg:my-8 ${className}`}>{children}</div>;
+const Container = ({ children, className }: ContainerProps) => {
+    return <div className={clsx('container mx-auto my-4 px-4 lg:my-8', className)}>{children}</div>;
 };
 
 export default Container;

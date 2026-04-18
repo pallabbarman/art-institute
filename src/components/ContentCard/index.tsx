@@ -24,7 +24,7 @@ const ContentCard = ({ artwork }: ContentCardProps) => {
                 </div>
             </Link>
             <div className="flex flex-col gap-4 px-4 pt-2.5 pb-6">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                     <Chip>{artwork?.artwork_type_title}</Chip>{' '}
                     <span className="text-grey-800 text-sm font-semibold">
                         {formatDate(artwork?.timestamp)}
