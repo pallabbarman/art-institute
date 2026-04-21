@@ -8,6 +8,7 @@ const RootLayout = SuspenseComponent(lazy(() => import('layouts/Root')));
 const MainLayout = SuspenseComponent(lazy(() => import('layouts/Main')));
 
 const NotFound = PageLoader(lazy(() => import('pages/NotFound')));
+const Home = PageLoader(lazy(() => import('pages/Home')));
 const Artworks = PageLoader(lazy(() => import('pages/Artworks')));
 const Artwork = PageLoader(lazy(() => import('pages/Artwork')));
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
             {
                 element: <MainLayout />,
                 children: [
+                    {
+                        path: routes.home.path,
+                        element: <Home />,
+                    },
                     {
                         path: routes.artworks.path,
                         element: <Artworks />,

@@ -1,10 +1,11 @@
-import ArtworksBanner from './components/ArtworksBanner';
-import ArtworksList from './components/ArtworksList';
+import SuspenseComponent from 'components/SuspenseComponent';
+import { lazy } from 'react';
+
+const ArtworksList = SuspenseComponent(lazy(() => import('./components/ArtworksList')));
 
 const Artworks = () => {
     return (
-        <div className="flex flex-col gap-8">
-            <ArtworksBanner />
+        <div>
             <ArtworksList />
         </div>
     );

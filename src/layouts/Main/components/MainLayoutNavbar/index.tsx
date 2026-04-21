@@ -1,11 +1,10 @@
 import Button from 'components/Button';
 import Container from 'components/Container';
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import routes from 'routes/index';
 
 const NAV_LINKS = [
-    { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Contact', href: '/contact' },
@@ -13,13 +12,14 @@ const NAV_LINKS = [
 
 const MainLayoutNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <nav className="border-grey-200 sticky top-0 bg-white px-7">
             <Container className="my-0! py-6">
                 <div className="flex items-center justify-between">
-                    <Link to={routes.artworks.path}>
-                        <h2>Artworks</h2>
+                    <Link to={routes.home.path}>
+                        <h2>Art Institute</h2>
                     </Link>
 
                     {/* Desktop nav links */}
@@ -37,8 +37,12 @@ const MainLayoutNavbar = () => {
 
                     {/* Right side */}
                     <div className="flex items-center gap-3">
-                        <Button color="flame" className="hidden md:inline-flex">
-                            Gallery
+                        <Button
+                            color="flame"
+                            className="hidden md:inline-flex"
+                            onClick={() => navigate(routes.artworks.path)}
+                        >
+                            Artworks
                         </Button>
 
                         {/* Hamburger */}
@@ -75,7 +79,9 @@ const MainLayoutNavbar = () => {
                             {link.label}
                         </a>
                     ))}
-                    <Button color="flame">Gallery</Button>
+                    <Button color="flame" onClick={() => navigate(routes.artworks.path)}>
+                        Gallery
+                    </Button>
                 </div>
             )}
         </nav>

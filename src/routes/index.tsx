@@ -34,10 +34,10 @@ const routes = {
     home: new Route({
         path: '/',
         icon: null,
-        title: 'Artworks',
+        title: 'Art Institute',
     }),
     artworks: new Route({
-        path: '/',
+        path: '/artworks',
         icon: null,
         title: 'Artworks',
     }),
